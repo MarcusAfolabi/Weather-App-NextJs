@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Documentation for Installing the Next.js Frontend
 
-## Getting Started
+## Prerequisites
+Before setting up the Next.js frontend, ensure your development environment includes the following:
 
-First, run the development server:
+1. **Node.js**: Version 18 or higher (install from [Node.js](https://nodejs.org/)).
+2. **npm**: Installed with Node.js.
+3. **Git**: For cloning the repository.
 
+---
+
+## Step-by-Step Installation Guide
+
+### 1. Clone the Repository
+Clone the Next.js frontend repository to your local machine:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone  https://github.com/MarcusAfolabi/Weather-App-NextJs.git 
+cd nextjs-frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+Install all required dependencies using npm:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Run the Development Server
+To start the development server locally:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The application will be accessible at [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Deployment Steps
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 1. Deploy to Vercel
+Next.js is optimized for Vercel. Follow these steps to deploy:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Push Your Code**:
+   Ensure all your changes are committed and pushed to a remote repository like GitHub or GitLab.
 
-## Deploy on Vercel
+2. **Connect Vercel**:
+   - Go to [Vercel](https://vercel.com/).
+   - Log in and create a new project.
+   - Connect your repository and follow the prompts.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Set Environment Variables**:
+   In the Vercel dashboard, go to **Settings > Environment Variables** and add the variables from `.env.local`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Deploy**:
+   Vercel will automatically build and deploy your application.
+
+5. **Access Your Deployed Application**:
+   The deployed application will have a unique URL, e.g., `https://your-project-name.vercel.app`.
+
+### 2. Deploy to Other Platforms
+If using other platforms like AWS or Heroku, build the project first:
+```bash
+npm run build
+```
+Then serve the build output.
+
+---
+
+## Testing the Frontend
+1. Access the application in your browser.
+2. Test the integration with the backend API by searching for weather data.
+3. Verify the functionality of all UI components.
+
+---
+
+## Troubleshooting
+1. **Port Conflicts**:
+   - If `http://localhost:3000` is in use, specify a different port:
+     ```bash
+     npm run dev -- -p 4000
+     ```
+
+2. **API Connection Issues**:
+   - Ensure the `NEXT_PUBLIC_API_URL` points to a running Laravel backend.
+   - Verify the backend is accessible from your frontend.
+
+3. **Build Failures**:
+   - Run `npm run build` locally to check for errors.
+   - Fix any TypeScript or configuration issues before deployment.
+
+4. **Missing Dependencies**:
+   - Run `npm install` to ensure all required packages are installed.
+
+---
+
+For further assistance, refer to the [Next.js Documentation](https://nextjs.org/docs).

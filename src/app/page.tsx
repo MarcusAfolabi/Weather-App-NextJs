@@ -17,7 +17,6 @@ export default function WeatherApp() {
 
     try {
       const data = await getWeather(location, unit);
-      console.log(data);
       setWeatherData(data);
     } catch (error) {
       alert((error as Error).message);
@@ -35,7 +34,7 @@ export default function WeatherApp() {
           <div className="flex w-full max-w-md">
             <input
               type="text"
-              className="rounded px-3 py-2 text-black"
+              className="rounded px-1 py-1 text-black"
               placeholder="Search city..."
               value={location}
               onChange={(e) => setLocation(e.target.value)}
